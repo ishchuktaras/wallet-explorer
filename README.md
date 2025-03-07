@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Wallet Explorer
+A Next.js web application to explore Cardano wallet information, including balance, transaction history, and NFT collections. Powered by the Blockfrost API.
+Features
 
-## Getting Started
+Search for any Cardano wallet address
+View wallet balance and transactions
+Display NFT collections with images and metadata
+Responsive design with Tailwind CSS
+Dark mode support with theme customization
 
-First, run the development server:
+Technology Stack
 
-```bash
+Next.js
+TypeScript
+Tailwind CSS
+Blockfrost API for Cardano blockchain data
+
+Project Structure
+Copywallet-explorer/
+├── .next/
+├── app/
+│   ├── fonts/
+│   ├── globals.css
+│   ├── layout.tsx
+│   ├── loading.tsx
+│   ├── page.tsx
+│   └── components/
+│       ├── nft-display.tsx
+│       ├── recent-searches.tsx
+│       ├── site-header.tsx
+│       ├── theme.tsx
+│       ├── transaction-list.tsx
+│       ├── wallet-info.tsx
+│       └── ui/
+│           ├── badge.tsx
+│           ├── button.tsx
+│           ├── card.tsx
+│           ├── dialog.tsx
+│           ├── dropdown-menu.tsx
+│           ├── input.tsx
+│           ├── skeleton.tsx
+│           ├── tabs.tsx
+│           └── tooltip.tsx
+├── lib/
+├── node_modules/
+├── .eslintrc.json
+├── .gitignore
+├── components.json
+├── next-env.d.ts
+├── next.config.mjs
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── README.md
+├── tailwind.config.js
+├── tailwind.config.ts
+└── tsconfig.json
+Installation
+bashCopy# Clone the repository
+git clone https://github.com/ishchuktaras/wallet-explorer.git
+
+# Navigate to project directory
+cd wallet-explorer
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Environment Variables
+Create a .env.local file in the root directory with:
+CopyNEXT_PUBLIC_BLOCKFROST_API_KEY=mainnetRUrPjKhpsagz4aKOCbvfTPHsF0SmwhLc
+NEXT_PUBLIC_BLOCKFROST_API_URL=https://cardano-mainnet.blockfrost.io/api/v0
+Usage
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Enter a Cardano wallet address in the search bar (default address is provided)
+View the wallet's balance, transaction history, and NFT collection
+Click on an NFT to view its details and metadata
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+API Integration
+This project uses the Blockfrost API to retrieve Cardano blockchain data. The following endpoints are utilized:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+/addresses/{address} - Get address information
+/addresses/{address}/transactions - Get transaction history
+/addresses/{address}/utxos - Get UTXOs
+/assets/{asset} - Get asset details (for NFTs)
 
-## Learn More
+Contributing
 
-To learn more about Next.js, take a look at the following resources:
+Fork the repository
+Create your feature branch (git checkout -b feature/amazing-feature)
+Commit your changes (git commit -m 'Add some amazing feature')
+Push to the branch (git push origin feature/amazing-feature)
+Open a Pull Request
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
+Acknowledgments
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Blockfrost for providing the Cardano API
+Cardano blockchain community
