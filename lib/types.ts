@@ -80,3 +80,47 @@ export interface Transaction {
   }[]
 }
 
+export interface NFTMetadata {
+  name?: string;
+  image?: string | { src?: string; mediaType?: string } | any;
+  description?: string | any;
+  attributes?:
+    | Array<{ trait_type?: string; name?: string; value: any }>
+    | Record<string, any>
+    | any;
+  files?:
+    | Array<{ name?: string; mediaType?: string; src?: string } | string>
+    | any;
+  image_base64?: string;
+  media?: string;
+  imageUrl?: string;
+  mediaType?: string;
+  src?: string;
+  [key: string]: any;
+}
+
+export interface NFTCardProps {
+  asset: Asset;
+  details?: AssetDetail;
+  viewMode: ViewMode;
+  debug?: boolean;
+  onClick: () => void;
+  variants?: any;
+}
+
+export type ViewMode = "grid" | "list";
+
+export interface NFTDisplayProps {
+  assets: Asset[];
+  assetDetails: Record<string, AssetDetail>;
+  viewMode: ViewMode;
+  onViewModeChange?: (mode: ViewMode) => void;
+  debug?: boolean;
+}
+
+export interface NFTDetailDialogProps {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+  nft: { asset: Asset; details?: AssetDetail } | null;
+}
+

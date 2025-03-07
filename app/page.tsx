@@ -198,7 +198,6 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-teal-50 via-cyan-50 to-white dark:from-teal-950 dark:via-cyan-950 dark:to-gray-900">
       <SiteHeader />
-
       <main className="container mx-auto px-4 py-8">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
