@@ -1,101 +1,67 @@
 Wallet Explorer
-A Next.js web application to explore Cardano wallet information, including balance, transaction history, and NFT collections. Powered by the Blockfrost API.
+A simple blockchain wallet explorer application that allows users to browse cryptocurrency wallet contents, including tokens and NFTs.
 Features
 
-Search for any Cardano wallet address
-View wallet balance and transactions
-Display NFT collections with images and metadata
-Responsive design with Tailwind CSS
-Dark mode support with theme customization
+Search and display wallet information by wallet address
+View basic wallet information
+Display ERC-20 tokens
+Browse NFT collections owned by the wallet
+Simple UI focused on functionality
 
-Technology Stack
+Technologies
 
-Next.js
-TypeScript
-Tailwind CSS
-Blockfrost API for Cardano blockchain data
+React.js (Create React App)
+TypeScript for type safety
+React Router for navigation
+Ethers.js for blockchain interactions
+Basic CSS for styling (no CSS modules or advanced styling frameworks)
+Public blockchain API endpoints for data fetching
 
-Project Structure
-Copywallet-explorer/
-├── .next/
-├── app/
-│   ├── fonts/
-│   ├── globals.css
-│   ├── layout.tsx
-│   ├── loading.tsx
-│   ├── page.tsx
-│   └── components/
-│       ├── nft-display.tsx
-│       ├── recent-searches.tsx
-│       ├── site-header.tsx
-│       ├── theme.tsx
-│       ├── transaction-list.tsx
-│       ├── wallet-info.tsx
-│       └── ui/
-│           ├── badge.tsx
-│           ├── button.tsx
-│           ├── card.tsx
-│           ├── dialog.tsx
-│           ├── dropdown-menu.tsx
-│           ├── input.tsx
-│           ├── skeleton.tsx
-│           ├── tabs.tsx
-│           └── tooltip.tsx
-├── lib/
-├── node_modules/
-├── .eslintrc.json
-├── .gitignore
-├── components.json
-├── next-env.d.ts
-├── next.config.mjs
-├── package-lock.json
-├── package.json
-├── postcss.config.mjs
-├── README.md
-├── tailwind.config.js
-├── tailwind.config.ts
-└── tsconfig.json
+Implementation Details
+This is a proof-of-concept application created for a coding assignment. It's intentionally simple and focuses on demonstrating basic blockchain data retrieval and display capabilities. The application:
+
+Uses a simple form to accept wallet addresses
+Makes API calls to fetch wallet data
+Renders token and NFT information in a basic layout
+Has minimal error handling and loading states
+Does not include advanced features like transaction history or portfolio tracking
+Uses TypeScript interfaces to define data structures
+
+Known Issues
+
+NFT rendering issues: One of the NFT images doesn't display correctly. This could be due to CORS issues, invalid metadata, or problems with the image hosting.
+Limited wallet information: Only displays basic token/NFT data
+No caching mechanism for API responses
+Simple UI with minimal styling
+May have performance issues with wallets containing many tokens/NFTs
+
 Installation
-bashCopy# Clone the repository
-git clone https://github.com/ishchuktaras/wallet-explorer.git
 
-# Navigate to project directory
+Clone the repository:
+
+bashCopygit clone https://github.com/ishchuktaras/wallet-explorer.git
 cd wallet-explorer
 
-# Install dependencies
-npm install
+Install dependencies:
 
-# Start development server
-npm run dev
-Environment Variables
-Create a .env.local file in the root directory with:
-CopyNEXT_PUBLIC_BLOCKFROST_API_KEY=mainnetRUrPjKhpsagz4aKOCbvfTPHsF0SmwhLc
-NEXT_PUBLIC_BLOCKFROST_API_URL=https://cardano-mainnet.blockfrost.io/api/v0
-Usage
+bashCopynpm install
 
-Enter a Cardano wallet address in the search bar (default address is provided)
-View the wallet's balance, transaction history, and NFT collection
-Click on an NFT to view its details and metadata
+Start the development server:
 
-API Integration
-This project uses the Blockfrost API to retrieve Cardano blockchain data. The following endpoints are utilized:
+bashCopynpm start
 
-/addresses/{address} - Get address information
-/addresses/{address}/transactions - Get transaction history
-/addresses/{address}/utxos - Get UTXOs
-/assets/{asset} - Get asset details (for NFTs)
+Open http://localhost:3000 to view the application in your browser.
 
-Contributing
+Future Improvements
+If developing this into a production application, these improvements would be recommended:
 
-Fork the repository
-Create your feature branch (git checkout -b feature/amazing-feature)
-Commit your changes (git commit -m 'Add some amazing feature')
-Push to the branch (git push origin feature/amazing-feature)
-Open a Pull Request
+Implement proper error handling
+Add loading states and pagination
+Improve UI/UX with better styling
+Add comprehensive testing
+Implement caching for API responses
+Add support for multiple blockchain networks
+Optimize TypeScript types for better code safety
 
 License
-This project is licensed under the MIT License - see the LICENSE file for details.
-Acknowledgments
-
-Blockfrost for providing the Cardano API
-Cardano blockchain community
+This project is available as open source under the terms of the MIT License.
