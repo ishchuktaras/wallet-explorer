@@ -1,39 +1,81 @@
 Wallet Explorer
-A simple blockchain wallet explorer application that allows users to browse cryptocurrency wallet contents, including tokens and NFTs.
-Features
 
-Search and display wallet information by wallet address
-View basic wallet information
-Display ERC-20 tokens
-Browse NFT collections owned by the wallet
-Simple UI focused on functionality
+## Přehled projektu
 
-Technologies
+Wallet Explorer je jednoduchá webová aplikace pro průzkum blockchainových peněženek, která umožňuje uživatelům procházet obsah kryptoměnových peněženek, včetně tokenů a NFT. Aplikace je nasazena na platformě Vercel a zdrojový kód je dostupný na GitHubu.
 
-React.js (Create React App)
-TypeScript for type safety
-React Router for navigation
-Ethers.js for blockchain interactions
-Basic CSS for styling (no CSS modules or advanced styling frameworks)
-Public blockchain API endpoints for data fetching
+## Klíčové funkce
 
-Implementation Details
-This is a proof-of-concept application created for a coding assignment. It's intentionally simple and focuses on demonstrating basic blockchain data retrieval and display capabilities. The application:
+- **Vyhledávání peněženek**: Uživatelé mohou zadat adresu peněženky a zobrazit její obsah
+- **Základní informace o peněžence**: Zobrazení základních údajů o peněžence
+- **Zobrazení ERC-20 tokenů**: Přehled všech ERC-20 tokenů vlastněných peněženkou
+- **Procházení NFT kolekcí**: Vizuální zobrazení NFT, které peněženka vlastní
+- **Jednoduchý UI**: Zaměření na funkčnost a přehlednost
 
-Uses a simple form to accept wallet addresses
-Makes API calls to fetch wallet data
-Renders token and NFT information in a basic layout
-Has minimal error handling and loading states
-Does not include advanced features like transaction history or portfolio tracking
-Uses TypeScript interfaces to define data structures
 
-Known Issues
+## Technický stack
 
-NFT rendering issues: One of the NFT images doesn't display correctly. This could be due to CORS issues, invalid metadata, or problems with the image hosting.
-Limited wallet information: Only displays basic token/NFT data
-No caching mechanism for API responses
-Simple UI with minimal styling
-May have performance issues with wallets containing many tokens/NFTs
+- **Frontend**: React.js s TypeScriptem
+- **Navigace**: React Router pro správu routování v aplikaci
+- **Blockchain interakce**: Knihovna Ethers.js pro komunikaci s blockchainem
+- **Stylování**: Základní CSS bez použití pokročilých frameworků
+- **Data**: Veřejná blockchain API pro získávání dat
+
+
+## Architektura a implementace
+
+Aplikace je strukturována jako moderní React aplikace s následujícími klíčovými komponenty:
+
+1. **Vstupní formulář**: Jednoduchý formulář pro zadání adresy peněženky
+2. **API vrstva**: Komponenty pro volání blockchain API a získávání dat
+3. **Zobrazovací komponenty**:
+
+1. Komponenta pro zobrazení základních informací o peněžence
+2. Komponenta pro zobrazení ERC-20 tokenů
+3. Komponenta pro zobrazení NFT kolekcí
+
+
+
+4. **TypeScript rozhraní**: Definice datových struktur pro typovou bezpečnost
+
+
+## Technické detaily implementace
+
+- **Proof-of-concept aplikace**: Vytvořena jako demonstrace základních schopností blockchain dat
+- **Minimální ošetření chyb**: Základní stavy načítání a chybové stavy
+- **Omezená funkcionalita**: Nezahrnuje pokročilé funkce jako historie transakcí nebo sledování portfolia
+- **Typová bezpečnost**: Využití TypeScript rozhraní pro definici datových struktur
+
+
+## Známé problémy a omezení
+
+- **Problémy s vykreslováním NFT**: Některé NFT obrázky se nezobrazují správně kvůli CORS problémům nebo neplatným metadatům
+- **Omezené informace o peněžence**: Aplikace zobrazuje pouze základní informace o tokenech a NFT
+
+
+## Potenciální vylepšení
+
+Pro budoucí vývoj bych zvážil následující vylepšení:
+
+1. **Rozšíření funkcionality**: Přidání historie transakcí a analýzy portfolia
+2. **Vylepšení UI/UX**: Implementace responzivního designu a pokročilejších vizuálních prvků
+3. **Řešení problémů s NFT**: Implementace proxy serveru pro obcházení CORS omezení
+4. **Rozšíření podpory sítí**: Přidání podpory pro více blockchainových sítí (Polygon, Solana, atd.)
+5. **Optimalizace výkonu**: Implementace cachování a optimalizace načítání dat
+
+
+## Technické výzvy a řešení
+
+Během vývoje jsem se setkal s několika výzvami:
+
+1. **Interakce s blockchainem**: Využití knihovny Ethers.js pro zjednodušení komunikace s Ethereum blockchainem
+2. **Zobrazování NFT**: Implementace komponenty pro zobrazení NFT s ošetřením chybějících nebo neplatných metadat
+3. **Typová bezpečnost**: Vytvoření TypeScript rozhraní pro zajištění konzistence dat napříč aplikací
+
+
+## Závěr
+
+Wallet Explorer je jednoduchá, ale funkční aplikace demonstrující základní schopnosti práce s blockchain daty. Přestože má své limity, slouží jako dobrý základ pro budoucí rozšíření a vylepšení. Projekt ukazuje mé schopnosti pracovat s moderními webovými technologiemi a blockchain API.
 
 Installation
 
@@ -52,16 +94,6 @@ bashCopynpm start
 
 Open http://localhost:3000 to view the application in your browser.
 
-Future Improvements
-If developing this into a production application, these improvements would be recommended:
-
-Implement proper error handling
-Add loading states and pagination
-Improve UI/UX with better styling
-Add comprehensive testing
-Implement caching for API responses
-Add support for multiple blockchain networks
-Optimize TypeScript types for better code safety
 
 License
 This project is available as open source under the terms of the MIT License.
